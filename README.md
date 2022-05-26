@@ -165,6 +165,6 @@ curl --location --request POST 'http://localhost:19623/api/values2' \
 
   感谢两位 .Net 大佬提供的开源技术和设计思路:
 
-* **ldqk**  -  [Masuit.Tools.AspNetCore](https://github.com/ldqk/Masuit.Tools/tree/master/Masuit.Tools.AspNetCore))
+* **ldqk**  -  [Masuit.Tools.AspNetCore](https://github.com/ldqk/Masuit.Tools/tree/master/Masuit.Tools.AspNetCore)
 
 * **yangzhongke**  -  [YouZack.FromJsonBody](https://github.com/yangzhongke/YouZack.FromJsonBody)
