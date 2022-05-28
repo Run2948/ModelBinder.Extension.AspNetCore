@@ -24,11 +24,12 @@ namespace ModelBinder.Extension.AspNetCore
             return mvcBuilder;
         }
 
-        public static void InsertSmartBodyBinding(this IList<IModelBinderProvider> providers)
+        public static IList<IModelBinderProvider> InsertSmartBodyBinding(this IList<IModelBinderProvider> providers)
         {
             var bodyProvider = providers.OfType<BodyModelBinderProvider>().Single();
             var complexDataProvider = providers.OfType<ComplexDataModelBinderProvider>().Single();
             providers.Insert(0, new FromSmartBodyModelBinderProvider(bodyProvider, complexDataProvider));
+            return providers;
         }
 
     }

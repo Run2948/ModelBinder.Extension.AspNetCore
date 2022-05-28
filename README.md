@@ -160,6 +160,28 @@ curl --location --request POST 'http://localhost:19623/api/values2' \
 }'
 ```
 
+##### Binding arrays in query parameters
+
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class Values3Controller : ControllerBase
+{
+    [HttpGet]
+    public string Get([FromSmartBody("dadIds")] int[] ids, [FromSmartBody] IEnumerable<string> hobbies)
+    {
+        System.Diagnostics.Debug.WriteLine(ids);
+        System.Diagnostics.Debug.WriteLine(hobbies);
+        return $"{string.Join(",", ids)}，爱好：{string.Join("、",hobbies)}";
+    }
+}
+```
+
+Postman 请求：
+
+```http
+curl --location -g --request GET 'http://localhost:19623/api/Values3?dadIds=[1,2,3]&hobbies=["篮球“,"足球","排球"]'
+```
 
 ### 4. 鸣谢
 
